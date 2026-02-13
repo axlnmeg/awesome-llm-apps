@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calorie Compass | AI-Powered Calorie Tracker</title>
+    <meta
+      name="description"
+      content="Track calories, analyze food images, generate AI-powered diet plans, and follow personalized exercise routines with Calorie Compass."
+    />
+    <meta
+      name="keywords"
+      content="calorie tracker, AI diet plan, BMI calculator, food image analysis, exercise plan, healthy lifestyle"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <div class="logo">Calorie Compass</div>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#ai-analysis">Image Analysis</a>
+          <a href="#diet-plans">Diet Plans</a>
+          <a href="#exercise">Exercise</a>
+          <a href="tips.html">Tips</a>
+          <a href="blog.html">Blog</a>
+        </div>
+        <a class="button ghost" href="login.html">Login</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <p class="pill">AI-Powered Fitness Journey</p>
+          <h1>Smarter calorie tracking, personalized for your goals.</h1>
+          <p>
+            Upload meals, calculate BMI, build diet and exercise plans, and log
+            progress with a unified AI-powered dashboard.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#tracker">Start Tracking</a>
+            <a class="button ghost" href="#diet-plans">Explore Plans</a>
+          </div>
+          <div class="hero-metrics">
+            <div>
+              <h3>98%</h3>
+              <p>Meal recognition accuracy</p>
+            </div>
+            <div>
+              <h3>150+</h3>
+              <p>Diet templates &amp; recipes</p>
+            </div>
+            <div>
+              <h3>24/7</h3>
+              <p>Personalized insights</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>Daily Snapshot</h2>
+          <div class="snapshot">
+            <div>
+              <span>Calories</span>
+              <strong>1,640 / 2,100</strong>
+            </div>
+            <div>
+              <span>Protein</span>
+              <strong>92g</strong>
+            </div>
+            <div>
+              <span>Activity</span>
+              <strong>45 min</strong>
+            </div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar" style="width: 72%"></div>
+          </div>
+          <p class="muted">You are 72% toward your daily goal.</p>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="section-header">
+          <h2>Everything you need to master your nutrition</h2>
+          <p>
+            Comprehensive tools for calorie tracking, meal analysis, workout
+            guidance, and lifestyle coaching.
+          </p>
+        </div>
+        <div class="grid three">
+          <article class="card">
+            <h3>Image Upload &amp; Calorie AI</h3>
+            <p>
+              Upload any meal photo and receive an estimated calorie range with
+              macro breakdowns.
+            </p>
+          </article>
+          <article class="card">
+            <h3>BMI &amp; Diet Plan Generator</h3>
+            <p>
+              Personalize meal plans using BMI and goal data for weight loss,
+              gain, or maintenance.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Habit &amp; Progress Tracking</h3>
+            <p>
+              Log meals, water, steps, and workouts to keep a holistic view of
+              wellness.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Exercise Plan Builder</h3>
+            <p>
+              Receive training routines aligned with your fitness goal and
+              available equipment.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Community Tips</h3>
+            <p>
+              Discover healthy lifestyle tips, portion guides, and mindful
+              eating strategies.
+            </p>
+          </article>
+          <article class="card">
+            <h3>SEO-Optimized Blog</h3>
+            <p>
+              Read evidence-backed articles on sustainable nutrition and
+              exercise science.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="ai-analysis" class="section accent">
+        <div class="section-header">
+          <h2>Image Upload &amp; Analysis</h2>
+          <p>
+            Drag and drop a meal photo to receive an AI-generated calorie
+            estimate and macro guidance.
+          </p>
+        </div>
+        <div class="grid two">
+          <div class="card upload-card">
+            <label class="upload-area" for="foodImage">
+              <input type="file" id="foodImage" accept="image/*" />
+              <span>Click to upload or drop an image</span>
+              <small>Supported: JPG, PNG, HEIC</small>
+            </label>
+            <div id="imagePreview" class="image-preview">
+              <span>Preview will appear here</span>
+            </div>
+          </div>
+          <div class="card analysis-card">
+            <h3>AI Analysis Output</h3>
+            <p class="muted">
+              Analysis is based on visual recognition of portion size, cooking
+              method, and ingredients.
+            </p>
+            <div class="analysis" id="analysisResult">
+              <div>
+                <span>Calories</span>
+                <strong>--</strong>
+              </div>
+              <div>
+                <span>Protein</span>
+                <strong>--</strong>
+              </div>
+              <div>
+                <span>Carbs</span>
+                <strong>--</strong>
+              </div>
+              <div>
+                <span>Fat</span>
+                <strong>--</strong>
+              </div>
+            </div>
+            <button class="button" id="analyzeButton" type="button">
+              Analyze Meal
+            </button>
+            <p class="muted" id="analysisNote"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="diet-plans" class="section">
+        <div class="section-header">
+          <h2>AI-Based Diet Plan Creation</h2>
+          <p>
+            Generate a meal strategy aligned to your BMI and fitness goals. The
+            AI recommends caloric targets, macro splits, and meal timing.
+          </p>
+        </div>
+        <div class="grid two">
+          <form class="card form" id="bmiForm">
+            <div class="form-row">
+              <label for="weight">Weight (kg)</label>
+              <input type="number" id="weight" placeholder="68" required />
+            </div>
+            <div class="form-row">
+              <label for="height">Height (cm)</label>
+              <input type="number" id="height" placeholder="172" required />
+            </div>
+            <div class="form-row">
+              <label for="goal">Goal</label>
+              <select id="goal">
+                <option value="loss">Weight Loss</option>
+                <option value="maintenance">Maintenance</option>
+                <option value="gain">Weight Gain</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="activity">Activity Level</label>
+              <select id="activity">
+                <option value="low">Low Activity</option>
+                <option value="moderate">Moderate Activity</option>
+                <option value="high">High Activity</option>
+              </select>
+            </div>
+            <button class="button" type="submit">Generate Plan</button>
+          </form>
+          <div class="card" id="dietPlanOutput">
+            <h3>Your Personalized Plan</h3>
+            <p class="muted">Fill in your details to see your plan.</p>
+            <ul class="plan-list" id="planList"></ul>
+          </div>
+        </div>
+        <div class="section-sub">
+          <h3>Pre-designed Diet Plan Suggestions</h3>
+          <div class="grid three">
+            <article class="card">
+              <h4>Lean &amp; Light</h4>
+              <p>High-volume veggies, lean proteins, 25% fat, 35% carbs.</p>
+            </article>
+            <article class="card">
+              <h4>Balanced Fuel</h4>
+              <p>40/30/30 macro split with steady energy snacks.</p>
+            </article>
+            <article class="card">
+              <h4>Performance Builder</h4>
+              <p>Higher carbs and protein for muscle gain and endurance.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="exercise" class="section accent">
+        <div class="section-header">
+          <h2>Exercise Plans Tailored to You</h2>
+          <p>
+            Build a training routine in seconds. Select your goal and available
+            time, and get a personalized weekly plan.
+          </p>
+        </div>
+        <div class="grid two">
+          <form class="card form" id="exerciseForm">
+            <div class="form-row">
+              <label for="fitnessGoal">Fitness Goal</label>
+              <select id="fitnessGoal">
+                <option value="fat-loss">Fat Loss</option>
+                <option value="strength">Strength Building</option>
+                <option value="endurance">Endurance</option>
+                <option value="mobility">Mobility &amp; Recovery</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="days">Days per week</label>
+              <input type="number" id="days" min="3" max="7" value="4" />
+            </div>
+            <div class="form-row">
+              <label for="equipment">Equipment</label>
+              <select id="equipment">
+                <option value="bodyweight">Bodyweight Only</option>
+                <option value="minimal">Minimal Equipment</option>
+                <option value="gym">Full Gym</option>
+              </select>
+            </div>
+            <button class="button" type="submit">Build Exercise Plan</button>
+          </form>
+          <div class="card">
+            <h3>Your Weekly Routine</h3>
+            <ul class="plan-list" id="exercisePlan"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="tracker" class="section">
+        <div class="section-header">
+          <h2>Daily Calorie Tracker</h2>
+          <p>
+            Log meals, snacks, and water intake. Track totals against your daily
+            goal and stay consistent.
+          </p>
+        </div>
+        <div class="grid two">
+          <div class="card form">
+            <div class="form-row">
+              <label for="mealName">Meal</label>
+              <input type="text" id="mealName" placeholder="Oatmeal bowl" />
+            </div>
+            <div class="form-row">
+              <label for="mealCalories">Calories</label>
+              <input type="number" id="mealCalories" placeholder="320" />
+            </div>
+            <div class="form-row">
+              <label for="mealTime">Time</label>
+              <input type="time" id="mealTime" />
+            </div>
+            <button class="button" id="addMeal" type="button">Add Meal</button>
+            <div class="goal-row">
+              <label for="dailyGoal">Daily Calorie Goal</label>
+              <input type="number" id="dailyGoal" value="2100" />
+            </div>
+          </div>
+          <div class="card">
+            <h3>Today&apos;s Log</h3>
+            <div class="log" id="mealLog"></div>
+            <div class="total-row">
+              <span>Total Calories</span>
+              <strong id="totalCalories">0</strong>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" id="goalProgress"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section accent">
+        <div class="section-header">
+          <h2>Tips, Suggestions &amp; Knowledge Center</h2>
+          <p>
+            Discover easy wins for hydration, sleep, and mindful nutrition.
+            Explore the full list on our tips page.
+          </p>
+        </div>
+        <div class="grid three">
+          <article class="card">
+            <h4>Smart Portions</h4>
+            <p>Use your palm, fist, and thumb to measure portions on the go.</p>
+          </article>
+          <article class="card">
+            <h4>Hydration Habit</h4>
+            <p>Drink 250ml of water before every meal to curb cravings.</p>
+          </article>
+          <article class="card">
+            <h4>Mindful Eating</h4>
+            <p>Slow down and aim for 20 minutes per meal for better digestion.</p>
+          </article>
+        </div>
+        <div class="center">
+          <a class="button ghost" href="tips.html">Read All Tips</a>
+        </div>
+      </section>
+
+      <section class="section" id="blog">
+        <div class="section-header">
+          <h2>SEO-Optimized Blog</h2>
+          <p>
+            Evidence-backed content on nutrition science, habit building, and
+            sustainable fitness.
+          </p>
+        </div>
+        <div class="grid three">
+          <article class="card">
+            <h4>How to Maintain a Calorie Deficit Without Burnout</h4>
+            <p>
+              Learn how to stay in a healthy deficit using meal timing, protein,
+              and weekly refeed strategies.
+            </p>
+          </article>
+          <article class="card">
+            <h4>Meal Prep Blueprint for Busy Professionals</h4>
+            <p>
+              A practical plan for batch cooking, grocery lists, and portioning
+              in under 60 minutes.
+            </p>
+          </article>
+          <article class="card">
+            <h4>Understanding BMI, BMR, and TDEE</h4>
+            <p>
+              Decode the most important metrics and build realistic expectations
+              for your fitness journey.
+            </p>
+          </article>
+        </div>
+        <div class="center">
+          <a class="button" href="blog.html">Visit the Blog</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>Calorie Compass</strong>
+        <p>AI-powered calorie tracking and wellness guidance.</p>
+      </div>
+      <div class="footer-links">
+        <a href="login.html">Login</a>
+        <a href="tips.html">Tips</a>
+        <a href="blog.html">Blog</a>
+        <a href="#tracker">Tracker</a>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
