@@ -1,0 +1,59 @@
+# Ignore large files and common development artifacts
+
+# Node modules
+node_modules/
+
+# Electron binaries and large files
+advanced_llm_apps/thinkpath_chatbot_app/node_modules/
+
+# Python virtual environment
+.venv/
+
+# Environment files
+.env
+*.env
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Large files
+*.zip
+*.tar
+*.gz
+*.log
+
+# Database files
+*.db
+*.sqlite
+
+# Build artifacts
+build/
+dist/
+
+# Dependency directories
+env/
+venv/
+
+# Coverage files
+.coverage
+*.cover
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Large data files
+*.csv
+*.json
+*.parquet
+
+# System files
+.DS_Store
+Thumbs.db
